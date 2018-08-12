@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "start": "npm run build:live",
-        "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts"
+        "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./index.ts",
+        "test": "jest --watch"
     },
     "keywords": [],
     "author": "",
@@ -15,5 +16,12 @@
         "nodemon": "^1.18.3",
         "ts-node": "^7.0.0",
         "typescript": "^3.0.1"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.tsx?$": "ts-jest"
+        },
+        "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+        "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
     }
 }
