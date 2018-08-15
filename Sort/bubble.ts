@@ -7,8 +7,6 @@ export const bubbleSort = (array: number[]): number[] => {
                 swapped = true;
             }
         }
-        if (!swapped) break;
+        if (!swapped) return array;
     }
-
-    return array;
 };

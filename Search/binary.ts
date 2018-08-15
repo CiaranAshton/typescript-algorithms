@@ -1,15 +1,14 @@
 export const binarySearch = (
     array: number[],
-    elm: number,
+    element: number,
     start = 0,
-    end = array.length - 1,
-): number => {
-    const middle = Math.floor((start + end) / 2);
-    return end < start
+    end = array.length,
+    middle = Math.floor((start + end) / 2),
+): number =>
+    end < start
         ? -1
-        : elm === array[middle]
+        : element === array[middle]
             ? middle
-            : elm < array[middle]
-                ? binarySearch(array, elm, start, middle - 1)
-                : binarySearch(array, elm, middle + 1, end);
-};
+            : element < array[middle]
+                ? binarySearch(array, element, start, middle - 1)
+                : binarySearch(array, element, middle + 1, end);
